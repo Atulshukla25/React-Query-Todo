@@ -61,14 +61,14 @@ const Todo = () => {
         <div className="input-group mb-3">
           <input
             type="text"
-            className="form-control bg-white text-black border-0"
+            className="form-control bg-transparent text-white border-1"
             placeholder="Add a new todo"
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
           />
           <button
             onClick={handleAddTodo}
-            className="btn btn-primary d-flex align-items-center fs-3"
+            className="btn text-black bg-white d-flex align-items-center fs-3"
           >
             <MdLibraryAdd />
           </button>
@@ -110,21 +110,21 @@ const Todo = () => {
                 {editingTodo === todo.id ? (
                   <button
                     onClick={handleUpdateTodo}
-                    className="btn btn-success btn-sm fs-4"
+                    className="btn text-white btn-sm fs-4"
                   >
                     <IoSave />
                   </button>
                 ) : (
                   <button
                     onClick={() => handleEditTodo(todo)}
-                    className="btn btn-warning btn-sm fs-4"
+                    className="btn text-white btn-sm fs-4"
                   >
                     <FiEdit />
                   </button>
                 )}
                 <button
                   onClick={() => deleteTodoMutation.mutate(todo.id)}
-                  className="btn btn-danger btn-sm fs-4"
+                  className="btn text-white btn-sm fs-4"
                 >
                   <AiFillDelete />
                 </button>
