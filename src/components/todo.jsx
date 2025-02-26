@@ -61,7 +61,7 @@ const Todo = () => {
         <div className="input-group mb-3">
           <input
             type="text"
-            className="form-control bg-white text-white border-0"
+            className="form-control bg-white text-black border-0"
             placeholder="Add a new todo"
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
