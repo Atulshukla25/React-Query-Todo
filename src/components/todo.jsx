@@ -26,7 +26,7 @@ const Todo = () => {
   const [editingText, setEditingText] = useState("");
 
   const handleAddTodo = () => {
-    if (newTodo.trim() === "") toast.warning("Todo field should not be empty");
+    if (newTodo.trim() === "") toast.warning("Please add a Todo");
     else {
       addTodoMutation.mutate(newTodo);
       setNewTodo("");
@@ -66,8 +66,11 @@ const Todo = () => {
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
           />
-          <button onClick={handleAddTodo} className="btn btn-primary d-flex align-items-center fs-3">
-          <MdLibraryAdd />
+          <button
+            onClick={handleAddTodo}
+            className="btn btn-primary d-flex align-items-center fs-3"
+          >
+            <MdLibraryAdd />
           </button>
         </div>
         <ul className="list-group fs-3">
