@@ -64,7 +64,12 @@ const Todo = () => {
             className="form-control bg-transparent text-white border-1"
             placeholder="Add a new todo"
             value={newTodo}
+            id="inputID"
             onChange={(e) => setNewTodo(e.target.value)}
+            style={{
+              boxShadow:
+                "inset 0px 0px 15px white",
+            }}
           />
           <button
             onClick={handleAddTodo}
