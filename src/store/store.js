@@ -18,8 +18,8 @@ export const useAddTodo = () => {
     mutationFn: async (title) => ({ id: Date.now(), title, completed: false }),
     onSuccess: (newTodo) => {
       queryClient.setQueryData(["todos"], (oldTodos) => [
-        ...(oldTodos || []),
         newTodo,
+        ...(oldTodos || []),
       ]);
       toast.success("Todo added successfully");
     },
