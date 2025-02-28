@@ -1,11 +1,12 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const fetchTodos = async () => {
-  const response = await fetch(
+  const response = await axios.get(
     "https://jsonplaceholder.typicode.com/todos?_limit=15"
   );
-  return response.json();
+  return response.data;
 };
 
 export const useTodos = () => {
